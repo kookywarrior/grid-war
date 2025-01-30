@@ -1,0 +1,341 @@
+* {
+	font-family: "Bebas Neue";
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+html,
+body {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: rgb(50, 50, 50);
+}
+
+#menuContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	opacity: 0;
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: column;
+}
+
+.menuOpacity {
+	-webkit-transition: opacity 2s ease-in;
+	-moz-transition: opacity 2s ease-in;
+	-o-transition: opacity 2s ease-in;
+	transition: opacity 2s ease-in;
+	opacity: 1 !important;
+}
+
+.letterContainer {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	padding-top: 3.75vh;
+}
+
+.letter {
+	padding-left: 2.5vh;
+	padding-right: 2.5vh;
+	display: grid;
+	grid-template-rows: repeat(6, 3.125vh);
+	gap: 0.5vh;
+}
+
+.letter3 {
+	grid-template-columns: repeat(3, 3.125vh);
+}
+
+.letter4 {
+	grid-template-columns: repeat(4, 3.125vh);
+}
+
+.letter5 {
+	grid-template-columns: repeat(5, 3.125vh);
+}
+
+.letterpixel {
+	border: solid lightgray 0.5vh;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.lettershow {
+	-webkit-transition: opacity 1s ease-in;
+	-moz-transition: opacity 1s ease-in;
+	-o-transition: opacity 1s ease-in;
+	transition: opacity 1s ease-in;
+	opacity: 1 !important;
+}
+
+.letterempty {
+	background: transparent;
+}
+
+.menuClass {
+	width: 100%;
+}
+
+#loadingContainer,
+#disconnectContainer {
+	color: lightgray;
+	text-align: center;
+	font-size: 6.25vh;
+}
+
+a {
+	font-size: 3.75vh;
+	text-decoration: none;
+	color: #a56dc8;
+}
+
+a:visited {
+	color: #a56dc8;
+}
+
+#spawnContainer {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#spawnBox {
+	background-color: darkgray;
+	width: 37.5vh;
+	border-radius: 0.625vh;
+	padding: 2.5vh;
+}
+
+#spawnBox > * {
+	box-sizing: border-box;
+	width: 37.5vh;
+	margin: auto;
+	text-align: center;
+	font-size: 3.125vh;
+}
+
+#inputName {
+	border: none;
+	outline: none;
+	background-color: #e5e3e3;
+	color: #4a4a4a;
+	cursor: text;
+	margin-bottom: 1.25vh !important;
+}
+
+#playButton {
+	background-color: rgb(100, 100, 100);
+	color: #fff;
+	cursor: pointer;
+}
+
+#playButton:hover {
+	background-color: rgb(80, 80, 80);
+}
+
+#linkContainer {
+	position: absolute;
+	bottom: 2.5vh;
+	right: 2.5vh;
+	background-color: white;
+	text-align: right;
+	padding: 1vh;
+	font-size: 2.5vh;
+	border-radius: 0.5vh;
+}
+
+#linkContainer > * {
+	font-size: 2.5vh !important;
+	cursor: pointer;
+	display: inline;
+	color: #a56dc8;
+}
+
+#fullScreenButton {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	vertical-align: middle;
+	font-size: 60px;
+	color: white;
+	cursor: pointer;
+}
+
+#fullScreenButton:hover {
+	color: #e5e3e3;
+}
+
+#gameCanvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#uiContainer {
+	pointer-events: none;
+}
+
+#displayContainer {
+	position: absolute;
+	top: 1.25vh;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: lightgray;
+	font-size: 3.125vh;
+}
+
+#leaderboard {
+	position: absolute;
+	right: 1.25vh;
+	top: 1.25vh;
+	color: #fff;
+	font-size: 3.875vh;
+	padding: 1.25vh;
+	padding-top: 0.875vh;
+	padding-bottom: 0.625vh;
+	width: 22.5vh;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 0.5vh;
+	text-align: center;
+}
+
+.leaderHolder {
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.leaderScore {
+	text-align: right;
+	float: right;
+	margin-left: 1.25vh;
+	font-size: 2.75vh;
+}
+
+.leaderboardItem {
+	float: left;
+	max-width: 17.5vh;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 2.75vh;
+}
+
+#minimap {
+	width: 13.75vh;
+	height: 13.75vh;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 0.5vh;
+	position: absolute;
+	bottom: 1.25vh;
+	left: 1.25vh;
+}
+
+#diedText {
+	color: #fff;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.2);
+	padding: 0;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 0vh;
+	animation: growText 1s ease forwards;
+}
+
+@keyframes growText {
+	100% {
+		font-size: 12.5vh;
+	}
+}
+
+#tutorialContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+#tutorialBox {
+	margin-top: 1.25vh;
+	padding: 1.25vh;
+	max-width: 87.5vh;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 0.5vh;
+}
+
+.tutorialBoxNewLine {
+	display: block;
+	font-family: "Hammersmith One";
+	color: #fff;
+	font-size: 2.5vh;
+	margin-bottom: 1.25vh;
+}
+
+#tutorialBox > *:last-child {
+	margin-bottom: 0 !important;
+}
+
+#landscapeContainer {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#phone {
+	width: 6.25vh;
+	height: 12.5vh;
+	border: 0.5vh solid white;
+	border-radius: 1.25vh;
+	animation: rotate 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(-90deg);
+	}
+	100% {
+		transform: rotate(-90deg);
+	}
+}
+
+#landscapeMsg {
+	color: white;
+	font-size: 3.125vh;
+	margin-top: 5vh;
+	text-align: center;
+}
+
+@media (orientation: portrait) {
+	#landscapeContainer {
+		display: flex !important;
+	}
+}

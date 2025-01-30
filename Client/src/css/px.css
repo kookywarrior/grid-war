@@ -1,0 +1,253 @@
+* {
+	font-family: "Anton";
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+html,
+body {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: rgb(50, 50, 50);
+}
+
+#menuContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	opacity: 0;
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: column;
+}
+
+.menuOpacity {
+	-webkit-transition: opacity 2s ease-in;
+	-moz-transition: opacity 2s ease-in;
+	-o-transition: opacity 2s ease-in;
+	transition: opacity 2s ease-in;
+	opacity: 1 !important;
+}
+
+.letterContainer {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	padding-top: 30px;
+}
+
+.letter {
+	padding-left: 20px;
+	padding-right: 20px;
+	display: grid;
+	grid-template-rows: repeat(6, 25px);
+	gap: 4px;
+}
+
+.letter3 {
+	grid-template-columns: repeat(3, 25px);
+}
+
+.letter4 {
+	grid-template-columns: repeat(4, 25px);
+}
+
+.letter5 {
+	grid-template-columns: repeat(5, 25px);
+}
+
+.letterpixel {
+	border: solid lightgray 4px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.lettershow {
+	-webkit-transition: opacity 1s ease-in;
+	-moz-transition: opacity 1s ease-in;
+	-o-transition: opacity 1s ease-in;
+	transition: opacity 1s ease-in;
+	opacity: 1 !important;
+}
+
+.letterempty {
+	background: transparent;
+}
+
+.menuClass {
+	width: 100%;
+}
+
+#loadingContainer,
+#disconnectContainer {
+	color: lightgray;
+	text-align: center;
+	font-size: 50px;
+}
+
+a {
+	font-size: 30px;
+	text-decoration: none;
+	color: #a56dc8;
+}
+
+a:visited {
+	color: #a56dc8;
+}
+
+#spawnContainer {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#spawnBox {
+	background-color: darkgray;
+	width: 300px;
+	border-radius: 5px;
+	padding: 20px;
+}
+
+#spawnBox > * {
+	box-sizing: border-box;
+	width: 300px;
+	margin: auto;
+	text-align: center;
+	font-size: 25px;
+}
+
+#inputName {
+	border: none;
+	outline: none;
+	background-color: #e5e3e3;
+	color: #4a4a4a;
+	cursor: text;
+	margin-bottom: 10px !important;
+}
+
+#playButton {
+	background-color: rgb(100, 100, 100);
+	color: #fff;
+	cursor: pointer;
+}
+
+#playButton:hover {
+	background-color: rgb(80, 80, 80);
+}
+
+#linkContainer {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	background-color: white;
+	text-align: right;
+	padding: 8px;
+	font-size: 20px;
+	border-radius: 4px;
+}
+
+#linkContainer > * {
+	font-size: 20px !important;
+	cursor: pointer;
+	display: inline;
+	color: #a56dc8;
+}
+
+#gameCanvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#uiContainer {
+	pointer-events: none;
+}
+
+#displayContainer {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: lightgray;
+	font-size: 25px;
+}
+
+#leaderboard {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	color: #fff;
+	font-size: 31px;
+	text-align: left;
+	padding: 10px;
+	padding-top: 7px;
+	padding-bottom: 5px;
+	width: 220px;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 4px;
+	text-align: center;
+}
+
+.leaderHolder {
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.leaderScore {
+	text-align: right;
+	float: right;
+	margin-left: 10px;
+	font-size: 22px;
+}
+
+.leaderboardItem {
+	float: left;
+	max-width: 140px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 22px;
+}
+
+#minimap {
+	width: 130px;
+	height: 130px;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 4px;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+
+#diedText {
+	color: #fff;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.2);
+	padding: 0px;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 0px;
+	animation: growText 1s ease forwards;
+}
+
+@keyframes growText {
+	100% {
+		font-size: 120px;
+	}
+}

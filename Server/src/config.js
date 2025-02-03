@@ -1,5 +1,5 @@
 const config = {
-	mapSize: 100,
+	mapSize: 50,
 	borderSize: 4,
 	sightWidth: 32,
 	sightHeight: 26,

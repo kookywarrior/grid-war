@@ -1,7 +1,7 @@
 const config = {
 	sightWidth: 16,
 	sightHeight: 9,
-	mapSize: 100,
+	mapSize: 50,
 	borderSize: 4,
 	tileSize: 1,
 	shadowSize: 0.3,

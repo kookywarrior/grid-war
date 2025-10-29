@@ -9,7 +9,8 @@ const config = {
 	showAnimationDuration: 200,
 	deathFadeout: 2000,
 	wiggleSize: 0.1,
-	touchThreshold: 50
+	touchThreshold: 50,
+	serverURL: "ws://localhost:4567/"
 }
 
 export default config

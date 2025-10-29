@@ -142,8 +142,7 @@ async function loadGame() {
 		}
 	})
 
-	window.ws = new WebSocket("wss://gridwar-kookywarrior.ladeapp.com/")
-	// window.ws = new WebSocket("ws://localhost:3000/")
+	window.ws = new WebSocket(config.serverURL)
 	window.ws.binaryType = "arraybuffer"
 	window.ws.onopen = () => {
 		window.ws.iosend = (data) => {
